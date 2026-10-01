@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nebula Coffee — fresh roasted, delivered</title>
+  <meta name="description" content="Nebula Coffee: specialty beans roasted weekly and delivered to your door. A demo site maintained by OrionOps agents.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Nebula Coffee</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#features">Why us</a>
+      <a href="#pricing">Plans</a>
+      <a href="#blog">Blog</a>
+      <a class="btn btn-small" href="#contact">Get started</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Specialty coffee, roasted weekly</p>
+      <h1>Wake up to beans roasted this week, not last quarter.</h1>
+      <p class="lead">We roast small batches every Monday and ship the same day. Pick a plan, tell us how you brew, and we do the rest.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#pricing">See plans</a>
+        <a class="btn btn-ghost" href="#features">How it works</a>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Why people switch to Nebula</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Roasted to order</h3>
+          <p>Your bag is roasted after you order. The roast date is printed on every label.</p>
+        </article>
+        <article class="card">
+          <h3>Matched to your brewer</h3>
+          <p>Espresso, filter, French press or cold brew — we grind and select beans for your setup.</p>
+        </article>
+        <article class="card">
+          <h3>Pause any time</h3>
+          <p>Going on holiday? Skip a delivery with one click. No calls, no forms.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <h2>Plans</h2>
+      <p class="section-intro">All plans include free shipping and a 30-day money-back guarantee.</p>
+      <div class="grid grid-3">
+        <article class="card plan">
+          <h3>Starter</h3>
+          <p class="price">€14<span>/month</span></p>
+          <ul>
+            <li>250 g every month</li>
+            <li>One origin</li>
+            <li>Whole bean or ground</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Choose Starter</a>
+        </article>
+        <article class="card plan plan-featured">
+          <p class="badge">Most popular</p>
+          <h3>Regular</h3>
+          <p class="price">€24<span>/month</span></p>
+          <ul>
+            <li>500 g every month</li>
+            <li>Two origins, rotating</li>
+            <li>Brewing guide included</li>
+          </ul>
+          <a class="btn" href="#contact">Choose Regular</a>
+        </article>
+        <article class="card plan">
+          <h3>Office</h3>
+          <p class="price">€79<span>/month</span></p>
+          <ul>
+            <li>2 kg every month</li>
+            <li>Priority roasting</li>
+            <li>Invoice billing</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Choose Office</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="blog" class="section">
+      <h2>From the roastery</h2>
+      <div class="grid grid-2">
+        <article class="card post">
+          <p class="meta">Brewing · 4 min read</p>
+          <h3><a href="blog/how-to-brew-better-filter-coffee.html">How to brew better filter coffee at home</a></h3>
+          <p>Water temperature, grind size and ratio: the three settings that matter more than the gear you own.</p>
+        </article>
+        <article class="card post">
+          <p class="meta">Origins · 3 min read</p>
+          <h3><a href="blog/meet-our-ethiopian-farmers.html">Meet the farmers behind our Ethiopian lot</a></h3>
+          <p>A short trip to the Guji highlands and the cooperative that grows our most floral coffee.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-cta">
+      <h2>Ready for better mornings?</h2>
+      <p class="section-intro">Leave your email and we will send a sample bag with your first order.</p>
+      <form class="cta-form" onsubmit="return false">
+        <label class="visually-hidden" for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+        <button class="btn" type="submit">Send me a sample</button>
+      </form>
+      <p class="form-note" id="form-note" hidden>Thanks! This is a demo site, so nothing was actually sent.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Nebula Coffee · A demo site maintained by <a href="https://orionops.tech">OrionOps</a> agents.</p>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
