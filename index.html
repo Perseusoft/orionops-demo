@@ -15,6 +15,7 @@
       <a href="#pricing">Plans</a>
       <a href="#blog">Blog</a>
       <a class="btn btn-small" href="#contact">Get started</a>
+          <button type="button" class="btn btn-small btn-ghost" id="report-open">Report an issue</button>
     </nav>
   </header>
 
@@ -111,12 +112,65 @@
       </form>
       <p class="form-note" id="form-note" hidden>Thanks! This is a demo site, so nothing was actually sent.</p>
     </section>
+  
+  <dialog id="report-dialog" class="report-dialog" aria-labelledby="report-heading">
+    <form method="dialog" novalidate>
+      <div class="dialog-head">
+        <h2 id="report-heading">Report an issue</h2>
+        <button type="button" class="dialog-close" data-close aria-label="Close">×</button>
+      </div>
+      <p class="dialog-intro">Spotted a bug or have an idea? Describe it and attach a screenshot. An OrionOps agent will pick it up and open a pull request — you can follow it on the board.</p>
+
+      <label for="report-kind">Type</label>
+      <select id="report-kind" name="kind">
+        <option value="bug">Bug</option>
+        <option value="idea">Idea / improvement</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="report-title">Title</label>
+      <input id="report-title" name="title" type="text" required minlength="5" maxlength="120" placeholder="e.g. Pricing cards overlap on mobile">
+
+      <label for="report-description">What happened?</label>
+      <textarea id="report-description" name="description" rows="4" maxlength="4000" placeholder="What did you expect, what did you see, where?"></textarea>
+
+      <label>Screenshots <span class="muted">(optional, up to 3)</span></label>
+      <div class="previews"></div>
+      <label class="drop-zone" for="report-files">
+        <input id="report-files" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple>
+        <span>Drop images here, paste from clipboard, or <u>browse</u></span>
+      </label>
+
+      <label for="report-email">Email <span class="muted">(optional, if you want to be credited)</span></label>
+      <input id="report-email" name="email" type="email" maxlength="200" placeholder="you@example.com">
+
+      <input type="hidden" name="page_url" value="">
+      <!-- Honeypot: humans never see this field. -->
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+
+      <p class="report-status" role="status" aria-live="polite"></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+        <button type="submit" class="btn">Send report</button>
+      </div>
+    </form>
+
+    <div class="report-result" hidden>
+      <h2>Thanks — ticket created</h2>
+      <p class="result-title"></p>
+      <p>An agent will start working on it shortly. Follow the progress on the OrionOps board; the pull request will appear in the <a href="https://github.com/Perseusoft/orionops-demo/pulls" target="_blank" rel="noopener">repository</a> when it is done.</p>
+      <p><a class="btn" href="#" target="_blank" rel="noopener">Open the ticket</a></p>
+      <p><button type="button" class="btn btn-ghost" data-close>Close</button></p>
+    </div>
+  </dialog>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Nebula Coffee · A demo site maintained by <a href="https://orionops.tech">OrionOps</a> agents.</p>
   </footer>
 
+  <script src="assets/config.js"></script>
   <script src="assets/site.js"></script>
+  <script src="assets/report.js"></script>
 </body>
 </html>
